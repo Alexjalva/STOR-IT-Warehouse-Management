@@ -1,0 +1,61 @@
+<div class="menu-container">
+  <div class="card-header col-md-10">
+    <h2>
+      CURRENT STORAGE
+    </h2>
+  </div>
+  {{#each items as |item|}}
+    <div class="item col-md-5">
+      <p>
+        {{item.id}}.
+        {{item.item_name}}
+      </p>
+    </div>
+    <div class="col-md-7">
+      <p>
+        owner:
+        {{item.owner_name}}
+      </p>
+    </div>
+  {{/each}}
+</div>
+
+<!-- This is the form for adding a new item -->
+
+<div class="add-item-container">
+  <h2>
+    What item would you like to store?
+  </h2>
+  <form class="new-item-form">
+    <label for="item_name">
+      item Name:
+    </label>
+    <br />
+    <textarea id="item_name" name="item_name" rows="2" cols="30">
+      {{item_name}}
+    </textarea>
+    <br />
+    <label for="description">
+      Description:
+    </label>
+    <br />
+    <textarea id="description" name="description" rows="5" cols="30">
+      {{description}}
+    </textarea>
+    <br />
+    <label for="owner_name">
+      Owner Name:
+    </label>
+    <br />
+    <textarea id="owner_name" name="owner_name" rows="2" cols="30">
+      {{owner_name}}
+    </textarea>
+    <br />
+    <br />
+    <br />
+    <button type="submit" value="Submit">
+      Submit
+    </button>
+  </form>
+</div>
+<script src="/js/add-item.js"></script>
