@@ -5,6 +5,7 @@ const withAuth = require('../utils/auth');
 router.get('/', async (req, res) => {
     console.log("home route attempt");
     try {
+      
       // Get all projects and JOIN with user data
     //   const blogData = await Blog.findAll({
     //     include: [
