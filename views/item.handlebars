@@ -1,0 +1,52 @@
+<div class="item-card">
+  <div class="item-card-header">
+    {{item_name}}
+  </div>
+  <div class="card-body">
+    <p>
+      Description:
+      {{description}}
+    </p>
+    <p>
+      Owner:
+      {{owner_name}}
+    </p>
+  </div>
+</div>
+
+<div class="edit-item-container">
+  <h2>
+    Update item
+  </h2>
+  <form class="edit-item-form">
+    <label for="item_name">
+      item Name:
+    </label>
+    <br />
+    <textarea id="item_name" name="item_name" rows="2" cols="30">
+      {{item_name}}
+    </textarea>
+    <br />
+    <label for="description">
+      Description:
+    </label>
+    <br />
+    <textarea id="description" name="description" rows="5" cols="30">
+      {{description}}
+    </textarea>
+    <br />
+    <label for="owner_name">
+      Owner Name:
+    </label>
+    <br />
+    <textarea id="owner_name" name="owner_name" rows="2" cols="30">
+      {{owner_name}}
+    </textarea>
+    <br />
+    <br />
+    <button type="submit" value="Submit">
+      Submit
+    </button>
+  </form>
+</div>
+<script src="/js/edit-item.js"></script>
