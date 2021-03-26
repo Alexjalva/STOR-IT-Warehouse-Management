@@ -1,2 +1,3 @@
-DROP DATABASE IF EXISTS tblogs_db;
-CREATE DATABASE tblogs_db;
+DROP DATABASE IF EXISTS warehouse_db;
+
+CREATE DATABASE warehouse_db;
