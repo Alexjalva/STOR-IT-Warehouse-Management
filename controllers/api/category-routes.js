@@ -5,101 +5,93 @@ const { Category, Item } = require('../../models');
 // The `/api/categories` endpoint
 
 // GET all categories
-router.get('/', (req, res) => {
+router.get('/', withAuth, async (req, res) => {
     // needs to modify this to Items
-    Category.findAll(
-        {
-            include: {
-                model: Item,
-                attributes: ['item_name']
-            }
-        }
-    )
-        .then(categoryData => res.json(categoryData))
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
+    try {
+        // Get all projects and JOIN with user data
+        const categoryData = await Category.findAll();
+
+        // Serialize data so the template can read it
+        const categories = categoryData.map((category) => category.get({ plain: true }));
+
+        // Pass serialized data and session flag into template
+        res.render('all', {
+            categories
         });
+    } catch (err) {
+        res.status(500).json(err);
+    }
 });
 
 //GET One category
-router.get('/:id', (req, res) => {
+router.get('/:id', withAuth, async (req, res) => {
     // find one category by its `id` value
-    Category.findOne({
-        where: {
-            id: req.params.id
-        },
-        // be sure to include its associated Products
-        include: {
-            model: Item,
-            attributes: ['category_id']
-        }
-    })
-        // go over this
-        .then(categoryData => res.json(categoryData))
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
+    try {
+        // Get all projects and JOIN with user data
+        const categoryData = await Category.findByPk(req.params.id, {
+            include: [
+                {
+                    model: Item
+                }
+            ]
         });
+
+        // Serialize data so the template can read it
+        const category = categoryData.map((category) => category.get({ plain: true }));
+
+        // Pass serialized data and session flag into template
+        res.render('category', {
+            category
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    }
 });
 
 //POST new category
-router.post('/', (req, res) => {
+router.post('/', withAuth, async (req, res) => {
     // create a new category
-    Category.create({
-        category_name: req.body.category_name
-    })
-        .then(categoryData => res.json(categoryData))
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
+    try {
+        const newCategory = await Category.create(req.body);
+        res.status(200).json(newItem);
+    } catch (err) {
+        res.status(400).json(err);
+    }
 });
 
 //PUT update category
-router.put('/:id', (req, res) => {
+router.put('/:id', withAuth, async (req, res) => {
     // update a category by its `id` value
-    Category.update(
-        {
-            category_name: req.body.category_name
-        },
-        {
-            where: {
-                id: req.params.id
-            }
-        })
-        .then(categoryData => {
-            if (!categoryData) {
-                res.status(404).json({ message: 'No Category found with that ID.' });
-                return;
-            }
-            res.json(categoryData);
-        })
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
+    try {
+        const updateCategory = await Category.update(req.body,
+            {
+                where: {
+                    id: req.params.id
+                }
+            });
+        res.status(200).json(updateCategory);
+    } catch (err) {
+        res.status(400).json(err);
+    }
 });
 
 //DELETE category
-router.delete('/:id', (req, res) => {
+router.delete('/:id', withAuth, async (req, res) => {
     // delete a category by its `id` value
-    Category.destroy({
-        where: {
-            id: req.params.id
-        }
-    })
-        .then(categoryData => {
-            if (!categoryData) {
-                res.status(404).json({ message: 'No Category found with that ID.' });
-                return;
+    try {
+        const categoryData = await Category.destroy({
+            where: {
+                id: req.params.id
             }
-            res.json(categoryData);
-        })
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
         });
+        if (!categoryData) {
+            res.status(404).json({ message: 'No category found with this id! ' });
+            return;
+        }
+        res.status(200).json(categoryData);
+    } catch (err) {
+        res.status(500).json(err);
+    }
 });
 
 module.exports = router;
