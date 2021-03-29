@@ -1,0 +1,19 @@
+<div class="mb-5 pt-3">
+    <a href="/dashboard/add/"><button id="add" class="button is-primary is-pulled-right">Add New Item</button></a>
+
+    <h2 class="title pb-4">Dashboard: Your Items: </h2>
+    <hr>
+    {{#if items.length}}
+</div>
+
+{{#each item as |item|}}
+{{> item-info item}}
+
+<a href="/dashboard/edit/{{item.id}}"><button class="button mb-5 ml-5 is-warning">Edit Item</button></a>
+</div>
+{{/each}}
+
+{{else}}
+<h6 class="pb-4 has-text-centered is-italic">You currently do not have any Items...</h6>
+
+{{/if}}
