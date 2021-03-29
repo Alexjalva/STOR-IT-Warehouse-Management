@@ -5,14 +5,13 @@ const Item = require('./Item');
 
 // I copied this from a class activity, need to updated as what we needed it//
 Item.belongsTo(Category, {
-  foreignKey: 'item_id',
+  foreignKey: 'category_id',
 });
 
 Category.hasMany(Item, {
-  foreignKey: 'item_id',
+  foreignKey: 'category_id',
 });
 
 module.exports = { User, Category, Item };
 
-//literals, depencies 
 

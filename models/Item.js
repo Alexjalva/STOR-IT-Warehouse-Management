@@ -13,7 +13,7 @@ Item.init(
             autoIncrement: true,
         },
         name: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.TEXT,
             allowNull: false,
         },
         dimensions: {
@@ -55,4 +55,5 @@ Item.init(
         modelName: 'item',
     }
 );
+
 module.exports = Item;
