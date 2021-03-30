@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { Item, Category } = require('../../models');
+const withAuth =  require('../../utils/auth');
 
 // The `/api` endpoint
 
@@ -41,7 +42,7 @@ router.get('/:id', withAuth, async (req, res) => {
 });
 
 // create new item
-router.post('/', withAuth, (req, res) => {
+router.post('/', withAuth, async (req, res) => {
   try {
     const newItem = await Item.create(req.body);
     res.status(200).json(newItem);

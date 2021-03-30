@@ -1,0 +1,23 @@
+<footer class="footer rows pb-2">
+      <div class="row-is-full content has-text-centered">
+        <p>
+          <a href="/">Homepage</a>{{#if loggedIn}} |
+          <a href="/dashboard/">Dashboard</a> |
+          <a href="/dashboard/add/">Add New Item</a>
+          <a href="/dashboard/edit/">Edit Item</a>
+          {{else}}
+          | <a href="/login/">Login</a>
+          {{/if}}
+        </p>
+      </div>
+      <div class="row-is-full content has-text-centered">
+        <p>
+          STOR-IT Warehouse Management <a href="https://github.com/Alexjalva/STOR-IT-Warehouse-Management">SAVAGE MIDNIGHT TOADS</a>
+        </p>
+      </div>
+    </footer>
+  </div>
+
+  {{#if loggedIn}}
+  <script src="/javascript/logout.js"></script>
+  {{/if}}
