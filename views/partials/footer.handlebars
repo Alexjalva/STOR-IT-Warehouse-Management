@@ -1,12 +1,12 @@
 <footer class="footer rows pb-2">
       <div class="row-is-full content has-text-centered">
         <p>
-          <a href="/">Homepage</a>{{#if loggedIn}} |
+          <a href="/"><h2>Homepage</h2></a>{{#if loggedIn}} |
           <a href="/dashboard/">Dashboard</a> |
           <a href="/dashboard/add/">Add New Item</a>
           <a href="/dashboard/edit/">Edit Item</a>
           {{else}}
-          | <a href="/login/">Login</a>
+          | <a href="/login/"><h2>Login</h2></a>
           {{/if}}
         </p>
       </div>

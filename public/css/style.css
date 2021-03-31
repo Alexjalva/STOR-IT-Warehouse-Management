@@ -10,6 +10,7 @@ body {
   }
   h2 {
     color:white;
+    font-family: Bebas Neue;
   }
   a {
     color: #e8e2db;
@@ -158,6 +159,7 @@ body {
     bottom: 0;
     width: 100%;
     background-color: #1a3263;
+    font-family: Bebas Neue;
 
   }
   
