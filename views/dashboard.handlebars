@@ -1,19 +1,19 @@
 <div class="mb-5 pt-3">
-    <a href="/dashboard/add/"><button id="add" class="button is-primary is-pulled-right">Add New Item</button></a>
+    <a href="/dashboard/create/"><button id="create-item" class="button is-primary is-pulled-right">create items</button></a>
 
-    <h2 class="title pb-4">Dashboard: Your Items: </h2>
+    <h2 class="title pb-4">Dashboard: Your storage items: </h2>
     <hr>
     {{#if items.length}}
 </div>
 
-{{#each item as |item|}}
-{{> item-info item}}
+{{#each items as |item|}}
+{{> items-info items}}
 
-<a href="/dashboard/edit/{{item.id}}"><button class="button mb-5 ml-5 is-warning">Edit Item</button></a>
+<a href="/dashboard/edit/{{items.id}}"><button class="button mb-5 ml-5 is-warning">Edit items</button></a>
 </div>
 {{/each}}
 
 {{else}}
-<h6 class="pb-4 has-text-centered is-italic">You currently do not have any Items...</h6>
+<h6 class="pb-4 has-text-centered is-italic">You currently do not have any storage itemss...</h6>
 
 {{/if}}
