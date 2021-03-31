@@ -3,8 +3,8 @@
   <hr>
   <form class="login-form">
     <div>
-      <label for="email-login"><h2>Email: </h2></label>
-      <input type="text" id="email-login" />
+      <label for="username-login">Username: </label>
+      <input type="text" id="username-login" />
     </div>
     <div>
       <label for="password-login"><h2>Password: </h2></label>
@@ -12,9 +12,22 @@
     </div>
     <div>
       <button type="submit" class="button is-primary">Login</button>
-      <a href="#"><button type="button" class="button is-danger">Signup</button></a>
+    </div>
+  </form>
+
+  <form class="signup-form">
+    <div>
+      <label for="username-signup">Username: </label>
+      <input type="text" id="username-signup" />
+    </div>
+    <div>
+      <label for="password-signup">Password: </label>
+      <input type="password" id="password-signup" />
+    </div>
+    <div>
+      <button type="submit" class="button is-primary">Sign-Up</button>
     </div>
   </form>
 </div>
 
-<script src="/javascript/login.js"></script>
+<script src="../js/login.js"></script>

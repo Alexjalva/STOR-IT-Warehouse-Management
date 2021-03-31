@@ -5,10 +5,7 @@ const withAuth =  require('../../utils/auth');
 // create new user //
 router.post('/', async (req, res) => {
   try {
-    const dbUserData = await User.create({
-      username: req.body.username,
-      password: req.body.password,
-    });
+    const dbUserData = await User.create(req.body);
 
     req.session.save(() => {
       req.session.loggedIn = true;
@@ -26,14 +23,14 @@ router.post('/login', async (req, res) => {
   try {
     const dbUserData = await User.findOne({
       where: {
-        username: req.body.username,
+        name: req.body.name,
       },
     });
 
     if (!dbUserData) {
       res
         .status(400)
-        .json({ message: 'Incorrect email or password. Please try again!' });
+        .json({ message: 'Incorrect username or password. Please try again!' });
       return;
     }
 
@@ -42,10 +39,10 @@ router.post('/login', async (req, res) => {
     if (!validPassword) {
       res
         .status(400)
-        .json({ message: 'Incorrect email or password. Please try again!' });
+        .json({ message: 'Incorrect username or password. Please try again!' });
       return;
     }
-
+    console.log("log in worked");
     req.session.save(() => {
       req.session.loggedIn = true;
 
