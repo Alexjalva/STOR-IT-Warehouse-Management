@@ -1,7 +1,9 @@
 .navbar {
     position: absolute;
+    display: block;
     background-color: #1a3263;
     font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-bottom: 50px;
   }
   a {
     color: #e8e2db;
@@ -17,6 +19,7 @@
     margin: 0;
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: #e8e2db;
+    padding-top: 50px;
   }
   
   a {
