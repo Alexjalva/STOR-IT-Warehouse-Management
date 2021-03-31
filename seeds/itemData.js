@@ -2,45 +2,45 @@ const { Item } = require('../models');
 
 const itemData = [
     {
-        "name":
-        "dimensions":
-        "owner":
-        "location":
-        "value":
-        "picture":
-        "comments":
+        "name": "Sofa",
+        "dimensions": "10ft",
+        "owner": "Carlos",
+        "location": "left side",
+        "value": "$2000",
+        "picture":"",
+        "comments": "Very dirty"
 
     },
     {
-        "name":
-        "dimensions":
-        "owner":
-        "location":
-        "value":
-        "picture":
-        "comments":
+        "name": "Bed",
+        "dimensions": "Queen",
+        "owner": "Alex",
+        "location": "Top rack",
+        "value": "$800",
+        "picture": "",
+        "comments": "missing legs",
 
     },
     {
-        "name":
-        "dimensions":
-        "owner":
-        "location":
-        "value":
-        "picture":
-        "comments":
+        "name": "dinin chairs",
+        "dimensions": "8 of them",
+        "owner": "Miguel",
+        "location": "bottom rack",
+        "value": "$120",
+        "picture": "",
+        "comments": "good conditon"
 
     },
     {
-        "name":
-        "dimensions":
-        "owner":
-        "location":
-        "value":
-        "picture":
-        "comments":
+        "name": "dining table",
+        "dimensions": "12ft long",
+        "owner": "Tom Brady",
+        "location": "bottom rack",
+        "value": "$1200",
+        "picture":"",
+        "comments": "scratches on many places"
 
     }
 ]
 
-module.exports = seedItem
+module.exports = seedItem;
