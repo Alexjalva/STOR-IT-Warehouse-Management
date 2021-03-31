@@ -1,9 +1,17 @@
+body {
+  background-image: url("https://images.unsplash.com/photo-1501523460185-2aa5d2a0f981?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1103&q=80");
+  background-size: cover;
+  height: 80%;
+}
 .navbar {
     position: absolute;
     display: block;
     background-color: #1a3263;
     font-family: Georgia, 'Times New Roman', Times, serif;
     margin-bottom: 50px;
+  }
+  h2 {
+    color:white;
   }
   a {
     color: #e8e2db;
@@ -15,7 +23,7 @@
   body,
   html {
     height: 100%;
-    padding: 0;
+    padding-top: 50px;
     margin: 0;
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: #e8e2db;
@@ -34,20 +42,7 @@
   a:hover {
     color: #e8e2db;
   }
-  .jumbotron {
-    height: 100%;
-    width: 100%;
-    background-size: cover;
-    }
-    
-    .jumbotron .container {
-    position: relative;
-    top:100px;
-    }
-    h1 {
-      color: #e8e2db;
-    }
-  
+ 
   button {
     border: 0;
     padding: 1%;
@@ -189,4 +184,7 @@
   
   .cardContent {
     background-color: #ebd8b7;
+  }
+  .navbar-light {
+    color: white;
   }
