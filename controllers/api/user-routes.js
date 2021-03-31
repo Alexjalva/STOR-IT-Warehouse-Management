@@ -3,11 +3,10 @@ const { User } = require('../../models');
 const withAuth =  require('../../utils/auth');
 
 // create new user //
-router.post('/', async (rec, res) => {
+router.post('/', async (req, res) => {
   try {
     const dbUserData = await User.create({
       username: req.body.username,
-      email: req.body.email,
       password: req.body.password,
     });
 
@@ -27,7 +26,7 @@ router.post('/login', async (req, res) => {
   try {
     const dbUserData = await User.findOne({
       where: {
-        email: req.body.email,
+        username: req.body.username,
       },
     });
 
@@ -61,7 +60,7 @@ router.post('/login', async (req, res) => {
 });
 
 //Logout //
-router.post('/logout', (res, req) => {
+router.post('/logout', withAuth, (res, req) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {
       res.status(204).end();
