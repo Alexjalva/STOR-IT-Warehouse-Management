@@ -17,7 +17,7 @@ Item.init(
             allowNull: false,
         },
         dimensions: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.TEXT,
             allowNull: false,
         },
         owner: {
