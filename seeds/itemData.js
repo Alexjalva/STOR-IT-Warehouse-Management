@@ -23,12 +23,13 @@ const itemData = [
     },
     {
         "name": "dinin chairs",
-        "dimensions": "8 of them",
+        "dimensions": "24 inches",
         "owner": "Miguel",
         "location": "bottom rack",
-        "value": "$120",
+        "value": 120,
         "picture": "",
-        "comments": "good conditon"
+        "comments": "good conditon",
+        "category_id": 1
 
     },
     {
@@ -42,5 +43,7 @@ const itemData = [
         "category_id": 1
     }
 ]
+
+const seedItem = () => Item.bulkCreate(itemData);
 
 module.exports = seedItem;
