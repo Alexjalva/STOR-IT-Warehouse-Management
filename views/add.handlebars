@@ -1,58 +1,39 @@
-{{!-- <div class="add-ItemName-container">
-  <h2>
-    What ItemName would you like to store?
-  </h2>
-  <form class="new-ItemName-form">
-    <label for="ItemName_name">
-      ItemName Name:
-    </label>
-    <br />
-    <textarea id="ItemName_name" name="ItemName_name" rows="2" cols="30">
-      
-    </textarea>
-    <br />
-    <label for="description">
-      Description:
-    </label>
-    <br />
-    <textarea id="description" name="description" rows="5" cols="30">
-      {{description}}
-    </textarea>
-    <br />
-    <label for="owner_name">
-      Owner Name:
-    </label>
-    <br />
-    <textarea id="owner_name" name="owner_name" rows="2" cols="30">
-      
-    </textarea>
-    <br />
-    <br />
-    <br />
-    <button type="submit" value="Submit">
-      Submit
-    </button>
-  </form>
-</div>
-<script src="/js/add-ItemName.js"></script> --}}
-
-<form>
+<form class="addItemForm">
   <div class="form-group">
 
-    <label for="exampleInputOwner1">Owner address</label>
-      {{owner_name}}
-    <input type="Owner" class="form-control" id="exampleInputOwner1" aria-describedby="OwnerHelp"
-      placeholder="Enter Owner">
+    <label for="nameInput"><h5>Item Name</h5></label>
+    <input type="name" class="form-control" id="nameInput" aria-describedby="nameHelp"
+      placeholder="Enter Name">
   </div>
   <div class="form-group">
-    <label for="exampleInputItemName1">Item Name</label>
-      {{ItemName}}
-    <input type="ItemName" class="form-control" id="exampleInputItemName1" placeholder="ItemName">
+    <label for="itemDimensions"><h5>Item Dimensions</h5></label>
+    <input type="itemDimensions" class="form-control" id="itemDimensions" placeholder="Item Dimensions">
   </div>
   <div class="form-group">
-    <label for="exampleInputDiscription1">Discription</label>
-      {{description}}
-    <input type="Discription" class="form-control" id="exampleInputDiscription1" placeholder="Discription">
+    <label for="itemOwner"><h5>Item Owner</h5></label>
+    <input type="itemOwner" class="form-control" id="itemOwner" placeholder="Who owns this item?">
+  </div>
+  <div class="form-group">
+    <label for="itemLocation"><h5>Item Location</h5></label>
+    <input type="itemLocation" class="form-control" id="itemLocation" placeholder="Where is this item?">
+  </div>
+  <div class="form-group">
+    <label for="itemValue"><h5>Item Value</h5></label>
+    <input type="number" class="form-control" id="itemValue" placeholder="How much is this item worth?">
+  </div>
+  <div class="form-group">
+    <label for="itemPicture"><h5>Item Picture</h5></label>
+    <input type="itemPicture" class="form-control" id="itemPicture" placeholder="Upload a picture of this item">
+  </div>
+  <div class="form-group">
+    <label for="itemComments"><h5>Comments</h5></label>
+    <input type="itemComments" class="form-control" id="itemComments" placeholder="Additional Comments">
+  </div>
+  <div class="form-group">
+    <label for="category"><h5>Category</h5></label>
+    <input type="category" class="form-control" id="category" placeholder="Category that the item fits into">
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+
+<script src="../js/addItem.js"></script>

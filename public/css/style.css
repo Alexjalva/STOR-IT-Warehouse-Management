@@ -5,8 +5,10 @@ body {
 }
 .navbar {
     position: absolute;
+    display: block;
     background-color: #1a3263;
     font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-bottom: 50px;
   }
   h1 {
     color:whitesmoke;
@@ -22,6 +24,9 @@ body {
     padding: 10px;
     text-decoration: underline;
   }
+  h5 {
+    color: white;
+  }
   a {
     color: #e8e2db;
   }
@@ -36,6 +41,7 @@ body {
     margin: 0;
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: #e8e2db;
+    margin-bottom: 25%;
   }
   
   a {

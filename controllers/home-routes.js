@@ -20,4 +20,21 @@ router.get('/', async (req, res) => {
     }
   });
 
+  router.get('/add', withAuth,  async (req, res) => {
+
+    try {
+      res.render('add');
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
+  router.get('/edit', withAuth, async (req, res) => {
+
+    try {
+      res.render('edit');
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
+
   module.exports = router;
