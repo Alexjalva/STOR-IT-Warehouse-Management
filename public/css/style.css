@@ -25,13 +25,16 @@ body {
     padding: 10px;
     text-decoration: underline;
   }
+  h4 {
+    font-family: Bebas Neue;
+    color: #fab95b;
+    font-size: 5px;
+  }
   h5 {
     color: white;
     font-family: Bebas Neue;
   }
-  a {
-    color: #e8e2db;
-  }
+  
   * {
     box-sizing: border-box;
   }
