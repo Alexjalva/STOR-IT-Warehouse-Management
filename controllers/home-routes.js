@@ -20,7 +20,7 @@ router.get('/', async (req, res) => {
     }
   });
 
-  router.get('/add', async (req, res) => {
+  router.get('/add', withAuth,  async (req, res) => {
 
     try {
       res.render('add');
@@ -28,7 +28,7 @@ router.get('/', async (req, res) => {
       res.status(500).json(err);
     }
   });
-  router.get('/edit', async (req, res) => {
+  router.get('/edit', withAuth, async (req, res) => {
 
     try {
       res.render('edit');

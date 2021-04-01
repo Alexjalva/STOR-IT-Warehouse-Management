@@ -13,6 +13,9 @@ body {
   h2 {
     color:white;
   }
+  h5 {
+    color: white;
+  }
   a {
     color: #e8e2db;
   }
@@ -27,7 +30,7 @@ body {
     margin: 0;
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: #e8e2db;
-    padding-top: 50px;
+    margin-bottom: 25%;
   }
   
   a {
@@ -161,7 +164,6 @@ body {
     bottom: 0;
     width: 100%;
     background-color: #1a3263;
-
   }
   
   .card {
