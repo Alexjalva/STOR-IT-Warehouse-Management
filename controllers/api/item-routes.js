@@ -44,31 +44,21 @@ router.get('/:id', withAuth, async (req, res) => {
 
 // create new item
 router.post('/', withAuth, async (req, res) => {
-  console.log(req.body);
   try {
     await cloudinary.uploader.upload(
-      'http://mobileimages.lowes.com/product/converted/190873/190873002673.jpg',
-      { public_id: 'fridge' },
+      req.body.picture,
+      { public_id: req.body.name },
       function (error, result) {
         console.log(result)
       }
     );
-    console.log("cloudinary worked");
-    console.log(req.body.category);
     const catName = req.body.category;
-    console.log(catName);
     let category = await Category.findOne({ where: { name: catName } });
-    console.log("tried to find");
-    console.log(category);
     if (category == null) {
-      console.log("trying to create");
       category = await Category.create({ name: catName});
     }
-    console.log("past cloudinary");
-    //const categoryData = category.map((category) => category.get({ plain: true }));
 
     const catID = category.dataValues.id;
-    console.log(catID);
     const newItem = await Item.create({
       name: req.body.name,
       dimensions: req.body.dimensions,
