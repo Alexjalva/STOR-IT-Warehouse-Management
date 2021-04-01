@@ -118,6 +118,9 @@ body {
     flex: 1;
     padding: 2% 4%;
   }
+  .jumbotron {
+    height: 80%;
+  }
   
   .btn-no-style {
     background: none;
