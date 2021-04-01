@@ -10,8 +10,19 @@ body {
     font-family: Georgia, 'Times New Roman', Times, serif;
     margin-bottom: 50px;
   }
+  h1 {
+    color:whitesmoke;
+    font-family: Staatliches;
+  }
   h2 {
     color:white;
+    font-family: Bebas Neue;
+  }
+  h3 {
+    color: white;
+    font-family: Bebas Neue;
+    padding: 10px;
+    text-decoration: underline;
   }
   h5 {
     color: white;
@@ -160,10 +171,16 @@ body {
     justify-content: center;
     padding: 1%;
     font-size: 110%;
-    position: fixed;
+    /* position:absolute; */
+    left: 0;
     bottom: 0;
     width: 100%;
     background-color: #1a3263;
+<<<<<<< HEAD
+=======
+    font-family: Bebas Neue;
+    text-align: center;
+>>>>>>> e8a8d6ebb496e67066dde94bc800b9560f23ebf7
   }
   
   .card {
