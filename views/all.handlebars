@@ -4,6 +4,13 @@
       CURRENT STORAGE
     </h2>
   </div>
+  {{#each categories as |category|}}
+    <div class="item col-md-5">
+      <p>
+        {{category.name}}
+      </p>
+    </div>
+  {{/each}}
   {{#each items as |item|}}
     <div class="item col-md-5">
       <p>
@@ -20,5 +27,5 @@
   {{/each}}
 </div>
 
-<!-- This is the form for adding a new item -->
+
 

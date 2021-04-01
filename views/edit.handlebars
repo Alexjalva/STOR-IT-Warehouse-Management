@@ -1,52 +1,40 @@
-<div class="item-card">
-  <div class="item-card-header">
-    {{item_name}}
-  </div>
-  <div class="card-body">
-    <p>
-      Description:
-      {{description}}
-    </p>
-    <p>
-      Owner:
-      {{owner_name}}
-    </p>
-  </div>
-</div>
+<form class="editItemForm">
+  <div class="form-group">
 
-<div class="edit-item-container">
-  <h2>
-    Update item
-  </h2>
-  <form class="edit-item-form">
-    <label for="item_name">
-      item Name:
-    </label>
-    <br />
-    <textarea id="item_name" name="item_name" rows="2" cols="30">
-      {{item_name}}
-    </textarea>
-    <br />
-    <label for="description">
-      Description:
-    </label>
-    <br />
-    <textarea id="description" name="description" rows="5" cols="30">
-      {{description}}
-    </textarea>
-    <br />
-    <label for="owner_name">
-      Owner Name:
-    </label>
-    <br />
-    <textarea id="owner_name" name="owner_name" rows="2" cols="30">
-      {{owner_name}}
-    </textarea>
-    <br />
-    <br />
-    <button type="submit" value="Submit">
-      Submit
-    </button>
-  </form>
-</div>
-<script src="/js/edit-item.js"></script>
+    <label for="nameInput"><h5>Item Name</h5></label>
+    <input type="name" class="form-control" id="nameInput" aria-describedby="nameHelp"
+      placeholder="Enter Name of existing item">
+  </div>
+  <div class="form-group">
+    <label for="itemDimensions"><h5>Item Dimensions</h5></label>
+    <input type="itemDimensions" class="form-control" id="itemDimensions" placeholder="New Item Dimensions">
+  </div>
+  <div class="form-group">
+    <label for="itemOwner"><h5>Item Owner</h5></label>
+    <input type="itemOwner" class="form-control" id="itemOwner" placeholder="Who owns this item?">
+  </div>
+  <div class="form-group">
+    <label for="itemLocation"><h5>Item Location</h5></label>
+    <input type="itemLocation" class="form-control" id="itemLocation" placeholder="New Item Location">
+  </div>
+  <div class="form-group">
+    <label for="itemValue"><h5>Item Value</h5></label>
+    <input type="number" class="form-control" id="itemValue" placeholder="Updated Item Value">
+  </div>
+  <div class="form-group">
+    <label for="itemPicture"><h5>Item Picture</h5></label>
+    <input type="itemPicture" class="form-control" id="itemPicture" placeholder="Updated Item Picture">
+  </div>
+  <div class="form-group">
+    <label for="itemComments"><h5>Comments</h5></label>
+    <input type="itemComments" class="form-control" id="itemComments" placeholder="Updated Item Comments">
+  </div>
+  <div class="form-group">
+    <label for="category"><h5>Category</h5></label>
+    <input type="category" class="form-control" id="category" placeholder="Updated Item Category">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+
+<script src="../js/edit-item.js"></script>
