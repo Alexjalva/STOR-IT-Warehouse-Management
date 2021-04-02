@@ -55,7 +55,7 @@ router.post('/', withAuth, async (req, res) => {
     const catName = req.body.category;
     let category = await Category.findOne({ where: { name: catName } });
     if (category == null) {
-      category = await Category.create({ name: catName});
+      category = await Category.create({ name: catName });
     }
 
     const catID = category.dataValues.id;
@@ -76,13 +76,29 @@ router.post('/', withAuth, async (req, res) => {
 });
 
 // update product
-router.put('/:id', withAuth, async (req, res) => {
+router.put('/', withAuth, async (req, res) => {
   // update product data
   try {
-    const updateItem = await Item.update(req.body,
+    const catName = req.body.category;
+    let category = await Category.findOne({ where: { name: catName } });
+    if (category == null) {
+      category = await Category.create({ name: catName });
+    }
+    const catID = category.dataValues.id;
+    const currItem = await Item.findOne({ where: { name: req.body.name } });
+    const updateItem = await Item.update({
+      name: req.body.name,
+      dimensions: req.body.dimensions,
+      owner: req.body.owner,
+      location: req.body.location,
+      value: req.body.value,
+      picture: req.body.picture,
+      comments: req.body.comments,
+      category_id: catID
+    },
       {
         where: {
-          id: req.params.id
+          id: currItem.dataValues.id
         }
       });
     res.status(200).json(updateItem);
