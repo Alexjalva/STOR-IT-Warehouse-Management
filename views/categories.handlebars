@@ -1,0 +1,18 @@
+<div class="menu-container">
+  <div class="card-header col-md-10">
+    <h1>
+      CURRENT STORAGE
+    </h1>
+  </div>
+  {{#each categories as |category|}}
+    <div class="categories col-md-5">
+      <h4>
+        {{category.name}}
+          <a class="nav-link" href=""/api/categories/${category.id}""><h2>View</h2></a>
+      </h4>
+    </div>
+  {{/each}}
+</div>
+
+<!-- This is the form for adding a new categories -->
+

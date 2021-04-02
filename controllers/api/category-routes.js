@@ -15,7 +15,7 @@ router.get('/', withAuth, async (req, res) => {
         const categories = categoryData.map((category) => category.get({ plain: true }));
 
         // Pass serialized data and session flag into template
-        res.render('all', {
+        res.render('categories', {
             categories
         });
     } catch (err) {
