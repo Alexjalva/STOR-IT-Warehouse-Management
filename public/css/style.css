@@ -180,7 +180,7 @@ body {
     display: flex;
     justify-content: center;
     padding: 1%;
-    font-size: 110%;
+    font-size: 90%;
     position: fixed;
     left: 0;
     bottom: 0;
@@ -188,6 +188,7 @@ body {
     background-color: #1a3263;
     font-family: Bebas Neue;
     text-align: center;
+    height: 18%;
   }
   
   .card {
