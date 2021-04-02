@@ -30,13 +30,18 @@ Warehouse Management Application
  
   # Installation
   The following necessary dependencies must be installed to run the application properly: 
+  
   Clone the repo
+ 
   Install the dependecies: run "npm i"
+  
   Run the server: "npm start"
+  
   localhost:3001
   
   # Usage
-  ​This application is used for 
+  ​This application is used for
+   
   This application allows you keep track of any items you please to keep in a storage. Could be at a storage unit, a warehouse, basement or garage. This will make it easier to know the item, the size, the exact location, its value and any comment on the shape of such item.
 
   # License
@@ -45,6 +50,7 @@ Warehouse Management Application
   # Contributing
   ​Contributors: 
   This project was created by:
+
   Alex Alvarado : https://github.com/Alexjalva
 
   Carlos Castillo: https://github.com/ccastillo25
